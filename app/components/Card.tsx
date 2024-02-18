@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { delTasks, UpDateTasks } from "../redux/tasksSlice";
 import { useState } from "react";
 
+
 const Card = () => {
+    // update  state  for input field and tasks array
   const [updatetitle, setUpdateTitle] = useState("");
   const [updatedes, setUpdateDes] = useState("");
 
