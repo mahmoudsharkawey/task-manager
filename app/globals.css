@@ -3,31 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }   
+}
+
+.button-92 {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    --c: #fff;
+    background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p, 100%)/300% no-repeat,
+        #0d9488;
+    color: #0000;
+    border: none;
+    border-radius: 7px;
+    transform: perspective(500px) rotateY(calc(20deg*var(--_i, -1)));
+    text-shadow: calc(var(--_i, -1)* 0.08em) -.01em 0 var(--c),
+        calc(var(--_i, -1)*-0.08em) .01em 2px #0004;
+    outline-offset: .1em;
+    transition: 0.8s;
+}
+
+.button-92:hover,
+.button-92:focus-visible {
+    --_p: 0%;
+    --_i: 1;
+    transition: 0.5s;
+}
+
+.button-92:active {
+    text-shadow: none;
+    color: var(--c);
+    box-shadow: inset 0 0 9e9q #0005;
+    transition: 0.5s;
+}
+
+.button-92 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+    cursor: pointer;
+    padding: .1em .3em;
 }
